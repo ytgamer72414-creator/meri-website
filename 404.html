@@ -2,14 +2,10 @@
 <html>
   <head>
     <script>
-      var segmentCount = 1;
       var l = window.location;
+      var path = l.pathname.replace('/meri-website/', '');
       l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?p=/' +
-        l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
+        l.protocol + '//' + l.hostname + '/meri-website/?/' + path + l.hash
       );
     </script>
   </head>

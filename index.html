@@ -1,12 +1,8 @@
 <script>
-  (function(l) {
-    if (l.search[1] === 'p') {
-      var decoded = l.search.slice(1).split('&').map(function(s) {
-        return s.replace(/~and~/g, '&')
-      }).join('?');
-      window.history.replaceState(null, null,
-        l.pathname + decoded.slice(2) + l.hash
-      );
+  (function() {
+    var redirect = window.location.search.slice(1);
+    if (redirect.startsWith('/')) {
+      window.history.replaceState(null, null, '/meri-website/' + redirect.slice(1));
     }
-  }(window.location))
+  })();
 </script>
