@@ -1,8 +1,9 @@
 <script>
   (function() {
-    var redirect = window.location.search.slice(1);
-    if (redirect.startsWith('/')) {
-      window.history.replaceState(null, null, '/meri-website/' + redirect.slice(1));
+    var redirect = sessionStorage.redirect;
+    delete sessionStorage.redirect;
+    if (redirect && redirect !== location.href) {
+      history.replaceState(null, null, redirect);
     }
   })();
 </script>

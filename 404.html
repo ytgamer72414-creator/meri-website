@@ -2,11 +2,8 @@
 <html>
   <head>
     <script>
-      var l = window.location;
-      var path = l.pathname.replace('/meri-website/', '');
-      l.replace(
-        l.protocol + '//' + l.hostname + '/meri-website/?/' + path + l.hash
-      );
+      sessionStorage.redirect = location.href;
+      location.href = '/meri-website/';
     </script>
   </head>
   <body></body>
