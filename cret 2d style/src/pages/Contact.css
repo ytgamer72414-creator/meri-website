@@ -1,0 +1,24 @@
+.contact-page {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.contact-card {
+  transform: translateY(0);
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 6px 6px 0 rgba(0,0,0,0.3) !important;
+  background-color: var(--col-bg) !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
